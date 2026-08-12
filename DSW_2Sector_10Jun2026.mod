@@ -1170,11 +1170,15 @@ end;
 ///////////////////////////////////////////////////////////////////////////
 // SHOCKS AND COMMANDS
 ///////////////////////////////////////////////////////////////////////////
+// Trial baseline: every shock at sigma_pol. eps_tauIMH/eps_s_DH/eps_s_EH and
+// their South counterparts are then re-sized post-Dynare, in the mainscript,
+// by pvtaxes_10Jun2026.m (PV of fiscal effect = 1% of world consumption).
+// eps_tau_offshoringH/L_star are not revenue-generating and stay at sigma_pol.
 shocks;
-var eps_tauIMH; stderr 0.01*0.9170/0.1937;
-var eps_s_DH; stderr 0.01;
-var eps_s_EH; stderr 0.01*0.9170/0.9483;
-var eps_tau_offshoringH; stderr 0.01*0.9170/0.0773;
+var eps_tauIMH; stderr sigma_pol;
+var eps_s_DH; stderr sigma_pol;
+var eps_s_EH; stderr sigma_pol;
+var eps_tau_offshoringH; stderr sigma_pol;
 
 var eps_tauIML_star; stderr sigma_pol;
 var eps_s_DL_star; stderr sigma_pol;

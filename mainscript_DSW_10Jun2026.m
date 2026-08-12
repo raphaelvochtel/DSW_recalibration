@@ -21,7 +21,7 @@ par.gamma           = 1;                %CRRA parameter MUST BE ONE!!!
 par.pers            = 0.9;              %Persistence of the TFP shock
 par.pers_pol        = 0.56;             %Persistence of policy shock
 par.sigma_Z         = 0.01;             %Standard deviation of the TFP shock
-par.sigma_pol       = 0.1;              %Standard deviation of the tariff policy shock
+par.sigma_pol       = 0.01;              %Standard deviation of the tariff policy shock
 par.sigmah          = 1;                %Standard deviation of skilled worker's idiosyncratic sector preferences
 par.sigmal          = par.sigmah;       %Standard deviation of low-skilled worker's idiosyncratic sector preferences
 par_star            = par;
@@ -269,8 +269,43 @@ end
 dynare DSW_2Sector_10Jun2026.mod
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SIZE POLICY SHOCKS
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% use_pv_rescaling = false: all 8 shocks stay flat at par.sigma_pol, as set
+%   in the .mod file -- the paper draft's own "1% to each instrument"
+%   convention.
+% use_pv_rescaling = true:  the 6 revenue-generating shocks (tariffs, D/E
+%   subsidies, North+South) are resized so the PV of their fiscal effect
+%   equals target_pv as a share of world consumption (pvtaxes_10Jun2026.m).
+%   The 2 offshoring-cost shocks (tau_V) have no fiscal-budget effect and
+%   always stay at sigma_pol regardless of this flag.
+use_pv_rescaling = false;
+
+if use_pv_rescaling
+    target_pv                   = 0.01;
+    [shock_stderr, trial_ratio] = pvtaxes_10Jun2026(oo_, eqlbm_ss0, par, solve(1), par.sigma_pol, target_pv);
+
+    disp('Trial (sigma_pol) PV-of-fiscal-effect ratios:'); trial_ratio
+    disp('Solved stderr (PV of fiscal effect = 1% of world consumption):'); shock_stderr
+
+    rescale_tags = fieldnames(shock_stderr);
+    for i = 1:numel(rescale_tags)
+        tag    = rescale_tags{i};
+        scale  = shock_stderr.(tag) / par.sigma_pol;
+        fields = fieldnames(oo_.irfs);
+        match  = fields(endsWith(fields, ['_' tag]));
+        for m = 1:numel(match)
+            oo_.irfs.(match{m}) = oo_.irfs.(match{m}) * scale;
+        end
+    end
+end
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FIGURES
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
+show_tauV = false;  % set either true or false to show the tau_V (offshoring) shock in every IRF panel/legend
+
 figuresNorth_10Jun2026
 figuresSouth_10Jun2026
 

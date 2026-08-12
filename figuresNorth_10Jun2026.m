@@ -42,7 +42,9 @@ figure(1)
 subplot(4,4,1)
 plot((oo_.irfs.wLl_eps_tauIMH(1:20)/eqlbm_ss0.wLl_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wLl_eps_tau_offshoringH(1:20)/eqlbm_ss0.wLl_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wLl_eps_s_DH(1:20)/eqlbm_ss0.wLl_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -54,7 +56,9 @@ title('($w^{Ll}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,2)
 plot((oo_.irfs.wHl_eps_tauIMH(1:20)/eqlbm_ss0.wHl_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wHl_eps_tau_offshoringH(1:20)/eqlbm_ss0.wHl_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wHl_eps_s_DH(1:20)/eqlbm_ss0.wHl_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -66,7 +70,9 @@ title('($w^{Hl}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,3)
 plot((oo_.irfs.wLh_eps_tauIMH(1:20)/eqlbm_ss0.wLh_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wLh_eps_tau_offshoringH(1:20)/eqlbm_ss0.wLh_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wLh_eps_s_DH(1:20)/eqlbm_ss0.wLh_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -78,7 +84,9 @@ title('($w^{Lh}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,4)
 plot((oo_.irfs.wHh_eps_tauIMH(1:20)/eqlbm_ss0.wHh_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wHh_eps_tau_offshoringH(1:20)/eqlbm_ss0.wLh_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wHh_eps_s_DH(1:20)/eqlbm_ss0.wLh_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -91,7 +99,9 @@ title('($w^{Hh}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,5)
 plot([0,oo_.irfs.massL_eps_tauIMH(1:19)/eqlbm_ss0.masses(1)]*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot([0,oo_.irfs.massL_eps_tau_offshoringH(1:19)/eqlbm_ss0.masses(1)]*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot([0,oo_.irfs.massL_eps_s_DH(1:19)/eqlbm_ss0.masses(1)]*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -104,7 +114,9 @@ title('($N^{L}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,6)
 plot([0,oo_.irfs.massH_eps_tauIMH(1:19)/eqlbm_ss0.masses(2)]*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot([0,oo_.irfs.massH_eps_tau_offshoringH(1:19)/eqlbm_ss0.masses(2)]*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot([0,oo_.irfs.massH_eps_s_DH(1:19)/eqlbm_ss0.masses(2)]*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -119,7 +131,9 @@ title('($N^{H}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,7)
 plot((oo_.irfs.mass_XL_eps_tauIMH(1:20)/eqlbm_ss0.masses(7))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_XL_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(7))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_XL_eps_s_DH(1:20)/eqlbm_ss0.masses(7))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -134,7 +148,9 @@ title('($N^{L}_{X}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,8)
 plot((oo_.irfs.mass_XH_eps_tauIMH(1:20)/eqlbm_ss0.masses(8))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_XH_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(8))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_XH_eps_s_DH(1:20)/eqlbm_ss0.masses(8))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -149,7 +165,9 @@ title('($N^{H}_{X}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,9)
 plot((oo_.irfs.mass_VL_eps_tauIMH(1:20)/eqlbm_ss0.masses(5))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_VL_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(5))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_VL_eps_s_DH(1:20)/eqlbm_ss0.masses(5))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -163,7 +181,9 @@ title('($N^{L}_{V}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,10)
 plot((oo_.irfs.mass_VH_eps_tauIMH(1:20)/eqlbm_ss0.masses(6))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_VH_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(6))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_VH_eps_s_DH(1:20)/eqlbm_ss0.masses(6))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -177,7 +197,9 @@ title('($N^{H}_{V}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,11)
 plot((oo_.irfs.mass_EL_eps_tauIMH(1:20)/eqlbm_ss0.masses(9))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_EL_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(9))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_EL_eps_s_DH(1:20)/eqlbm_ss0.masses(9))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -190,7 +212,9 @@ title('($N^{L}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,12)
 plot((oo_.irfs.mass_EH_eps_tauIMH(1:20)/eqlbm_ss0.masses(10))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_EH_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(10))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_EH_eps_s_DH(1:20)/eqlbm_ss0.masses(10))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -203,7 +227,9 @@ title('($N^{H}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,13)
 plot((oo_.irfs.CLl_eps_tauIMH(1:20)/eqlbm_ss0.hh(4))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CLl_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(4))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CLl_eps_s_DH(1:20)/eqlbm_ss0.hh(4))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -216,7 +242,9 @@ title('($C^{Ll}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,14)
 plot((oo_.irfs.CHl_eps_tauIMH(1:20)/eqlbm_ss0.hh(2))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CHl_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(2))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CHl_eps_s_DH(1:20)/eqlbm_ss0.hh(2))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -228,7 +256,9 @@ title('($C^{Hl}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,15)
 plot((oo_.irfs.CLh_eps_tauIMH(1:20)/eqlbm_ss0.hh(3))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CLh_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(3))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CLh_eps_s_DH(1:20)/eqlbm_ss0.hh(3))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -242,14 +272,20 @@ title('($C^{Lh}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,16)
 plot((oo_.irfs.CHh_eps_tauIMH(1:20)/eqlbm_ss0.hh(1))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CHh_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(1))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CHh_eps_s_DH(1:20)/eqlbm_ss0.hh(1))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
 plot((oo_.irfs.CHh_eps_s_EH(1:20)/eqlbm_ss0.hh(1))*100,'-square','LineWidth',1.5,'color', [0.8555  0.1555 0.1555], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 title('($C^{Hh}$)','FontSize',6,'Interpreter','latex')
 
+if show_tauV
 legend('$\tau_{IM}$ shock', '$\tau_{V}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.5 0.02 0.005 0.005], 'NumColumns', 4, 'FontSize',6)
+else
+legend('$\tau_{IM}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.5 0.02 0.005 0.005], 'NumColumns', 3, 'FontSize',6)
+end
 % saveas(figure(1), [pwd '/Northshock_North_2sec1_10Sep2025.eps'],'epsc');
 
  
@@ -260,7 +296,9 @@ figure(2)
 subplot(4,4,1)
 plot((oo_.irfs.Q_eps_tauIMH(1:20)/solve(1))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.Q_eps_tau_offshoringH(1:20)/solve(1))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.Q_eps_s_DH(1:20)/solve(1))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -272,7 +310,9 @@ title('($Q$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,2)
 plot((oo_.irfs.VHh_eps_tauIMH(1:20)/eqlbm_ss0.hh(19))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VHh_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(19))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VHh_eps_s_DH(1:20)/eqlbm_ss0.hh(19))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -284,7 +324,9 @@ title('($V^{Hh}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,3)
 plot((oo_.irfs.VHl_eps_tauIMH(1:20)/eqlbm_ss0.hh(20))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VHl_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(20))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VHl_eps_s_DH(1:20)/eqlbm_ss0.hh(20))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -297,7 +339,9 @@ title('($V^{Hl}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,4)
 plot((oo_.irfs.VLh_eps_tauIMH(1:20)/eqlbm_ss0.hh(21))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VLh_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(21))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VLh_eps_s_DH(1:20)/eqlbm_ss0.hh(21))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -309,7 +353,9 @@ title('($V^{Lh}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,5)
 plot((oo_.irfs.VLl_eps_tauIMH(1:20)/eqlbm_ss0.hh(22))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VLl_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(22))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VLl_eps_s_DH(1:20)/eqlbm_ss0.hh(22))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -322,7 +368,9 @@ title('($V^{Ll}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,6)
 plot((oo_.irfs.h_supplyH_eps_tauIMH(1:20)/eqlbm_ss0.agg(17))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.h_supplyH_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(17))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.h_supplyH_eps_s_DH(1:20)/eqlbm_ss0.agg(17))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -347,7 +395,9 @@ title('($H^{H}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,7)
 plot((oo_.irfs.h_supplyL_eps_tauIMH(1:20)/eqlbm_ss0.agg(16))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.h_supplyL_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(16))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.h_supplyL_eps_s_DH(1:20)/eqlbm_ss0.agg(16))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -374,7 +424,9 @@ title('($H^{L}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,8)
 plot((oo_.irfs.l_supplyH_eps_tauIMH(1:20)/eqlbm_ss0.agg(6))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.l_supplyH_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(6))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.l_supplyH_eps_s_DH(1:20)/eqlbm_ss0.agg(6))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -403,7 +455,9 @@ title('($L^{H}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,9)
 plot((oo_.irfs.l_supplyL_eps_tauIMH(1:20)/eqlbm_ss0.agg(7))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.l_supplyL_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(7))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.l_supplyL_eps_s_DH(1:20)/eqlbm_ss0.agg(7))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -430,7 +484,9 @@ title('($L^{L}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,10)
 plot((oo_.irfs.psiH_eps_tauIMH(1:20)/eqlbm_ss0.psiH_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.psiH_eps_tau_offshoringH(1:20)/eqlbm_ss0.psiH_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.psiH_eps_s_DH(1:20)/eqlbm_ss0.psiH_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -444,7 +500,9 @@ title('($\psi^{H}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,11)
 plot((oo_.irfs.psiL_eps_tauIMH(1:20)/eqlbm_ss0.psiL_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.psiL_eps_tau_offshoringH(1:20)/eqlbm_ss0.psiL_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.psiL_eps_s_DH(1:20)/eqlbm_ss0.psiL_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -457,7 +515,9 @@ title('($\psi^{L}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,12)
 plot((oo_.irfs.HhE_supply_eps_tauIMH(1:20)/eqlbm_ss0.hh(27))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.HhE_supply_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(27))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.HhE_supply_eps_s_DH(1:20)/eqlbm_ss0.hh(27))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -470,7 +530,9 @@ title('($H^{H}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,13)
 plot((oo_.irfs.HlE_supply_eps_tauIMH(1:20)/eqlbm_ss0.hh(28))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.HlE_supply_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(28))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.HlE_supply_eps_s_DH(1:20)/eqlbm_ss0.hh(28))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -482,7 +544,9 @@ title('($H^{L}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,14)
 plot((oo_.irfs.LhE_supply_eps_tauIMH(1:20)/eqlbm_ss0.hh(33))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.LhE_supply_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(33))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.LhE_supply_eps_s_DH(1:20)/eqlbm_ss0.hh(33))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -494,7 +558,9 @@ title('($L^{H}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,15)
 plot((oo_.irfs.LlE_supply_eps_tauIMH(1:20)/eqlbm_ss0.hh(34))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.LlE_supply_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(34))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.LlE_supply_eps_s_DH(1:20)/eqlbm_ss0.hh(34))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -507,7 +573,9 @@ title('($L^{L}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,16)
 plot(ToTH_eps_tauIMH(1:20)/ToTH_SS*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot(ToTH_eps_tau_offshoringH(1:20)/ToTH_SS*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot(ToTH_eps_s_DH(1:20)/ToTH_SS*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -515,7 +583,11 @@ plot(ToTH_eps_s_EH(1:20)/ToTH_SS*100,'-square','LineWidth',1.5,'color', [0.8555 
 title('($ToT^{H}$)','FontSize',6,'Interpreter','latex')
 
 
+if show_tauV
 legend('$\tau_{IM}$ shock', '$\tau_{V}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 4, 'FontSize',6)
+else
+legend('$\tau_{IM}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 3, 'FontSize',6)
+end
 % saveas(figure(2), [pwd '/Northshock_North_2sec2_10Sep2025.eps'],'epsc');
 
 
@@ -525,7 +597,9 @@ figure(3)
 subplot(4,4,1)
 plot((oo_.irfs.wLl_star_eps_tauIMH(1:20)/eqlbm_ss0.wLl_star_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wLl_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.wLl_star_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wLl_star_eps_s_DH(1:20)/eqlbm_ss0.wLl_star_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -535,7 +609,9 @@ title('($w^{Ll*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,2)
 plot((oo_.irfs.wHl_star_eps_tauIMH(1:20)/eqlbm_ss0.wHl_star_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wHl_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.wHl_star_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wHl_star_eps_s_DH(1:20)/eqlbm_ss0.wHl_star_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -545,7 +621,9 @@ title('($w^{Hl*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,3)
 plot((oo_.irfs.wLh_star_eps_tauIMH(1:20)/eqlbm_ss0.wLh_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wLh_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.wLh_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wLh_star_eps_s_DH(1:20)/eqlbm_ss0.wLh_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -556,7 +634,9 @@ title('($w^{Lh*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,4)
 plot((oo_.irfs.wHh_star_eps_tauIMH(1:20)/eqlbm_ss0.wHh_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wHh_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.wHh_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wHh_star_eps_s_DH(1:20)/eqlbm_ss0.wHh_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -571,7 +651,9 @@ title('($w^{Hh*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,5)
 plot([0,oo_.irfs.massL_star_eps_tauIMH(1:19)/eqlbm_ss0.masses(11)]*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot([0,oo_.irfs.massL_star_eps_tau_offshoringH(1:19)/eqlbm_ss0.masses(11)]*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot([0,oo_.irfs.massL_star_eps_s_DH(1:19)/eqlbm_ss0.masses(11)]*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -587,7 +669,9 @@ title('($N^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,6)
 plot([0,oo_.irfs.massH_star_eps_tauIMH(1:19)/eqlbm_ss0.masses(12)]*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot([0,oo_.irfs.massH_star_eps_tau_offshoringH(1:19)/eqlbm_ss0.masses(12)]*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot([0,oo_.irfs.massH_star_eps_s_DH(1:19)/eqlbm_ss0.masses(12)]*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -600,7 +684,9 @@ title('($N^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,7)
 plot((oo_.irfs.mass_XL_star_eps_tauIMH(1:20)/eqlbm_ss0.masses(17))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_XL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(17))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_XL_star_eps_s_DH(1:20)/eqlbm_ss0.masses(17))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -611,7 +697,9 @@ title('($N_{X}^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,8)
 plot((oo_.irfs.mass_XH_star_eps_tauIMH(1:20)/eqlbm_ss0.masses(18))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_XH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(18))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_XH_star_eps_s_DH(1:20)/eqlbm_ss0.masses(18))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -622,7 +710,9 @@ title('($N_{X}^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,9)
 plot((oo_.irfs.mass_VL_star_eps_tauIMH(1:20)/eqlbm_ss0.masses(15))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_VL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(15))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_VL_star_eps_s_DH(1:20)/eqlbm_ss0.masses(15))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -634,7 +724,9 @@ title('($N_{V}^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,10)
 plot((oo_.irfs.mass_VH_star_eps_tauIMH(1:20)/eqlbm_ss0.masses(16))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_VH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(16))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_VH_star_eps_s_DH(1:20)/eqlbm_ss0.masses(16))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -645,7 +737,9 @@ title('($N_{V}^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,11)
 plot((oo_.irfs.mass_EL_star_eps_tauIMH(1:20)/eqlbm_ss0.masses(19))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_EL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(19))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_EL_star_eps_s_DH(1:20)/eqlbm_ss0.masses(19))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -657,7 +751,9 @@ title('($N_{E}^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,12)
 plot((oo_.irfs.mass_EH_star_eps_tauIMH(1:20)/eqlbm_ss0.masses(20))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.mass_EH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.masses(20))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.mass_EH_star_eps_s_DH(1:20)/eqlbm_ss0.masses(20))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -670,7 +766,9 @@ title('($N_{E}^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,13)
 plot((oo_.irfs.CLl_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(8))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CLl_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(8))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CLl_star_eps_s_DH(1:20)/eqlbm_ss0.hh(8))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -682,7 +780,9 @@ title('($C^{Ll*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,14)
 plot((oo_.irfs.CHl_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(6))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CHl_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(6))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CHl_star_eps_s_DH(1:20)/eqlbm_ss0.hh(6))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -695,7 +795,9 @@ title('($C^{Hl*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,15)
 plot((oo_.irfs.CLh_star_eps_tauIMH(1:20))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CLh_star_eps_tau_offshoringH(1:20))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CLh_star_eps_s_DH(1:20))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -708,13 +810,19 @@ title('($C^{Lh*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,16)
 plot((oo_.irfs.CHh_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(5))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.CHh_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(5))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.CHh_star_eps_s_DH(1:20)/eqlbm_ss0.hh(5))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
 plot((oo_.irfs.CHh_star_eps_s_EH(1:20)/eqlbm_ss0.hh(5))*100,'-square','LineWidth',1.5,'color', [0.8555  0.1555 0.1555], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 title('($C^{Hh*}$)','FontSize',6,'Interpreter','latex')
+if show_tauV
 legend('$\tau_{IM}$ shock', '$\tau_{V}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 4, 'FontSize',6)
+else
+legend('$\tau_{IM}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 3, 'FontSize',6)
+end
 % saveas(figure(3), [pwd '/Northshock_South_2sec1_10Sep2025.eps'],'epsc');
 
 
@@ -725,7 +833,9 @@ figure(4)
 subplot(4,4,1)
 plot((oo_.irfs.Q_eps_tauIMH(1:20)/solve(1))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.Q_eps_tau_offshoringH(1:20)/solve(1))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.Q_eps_s_DH(1:20)/solve(1))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -736,7 +846,9 @@ title('($Q$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,2)
 plot((oo_.irfs.VHh_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(23))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VHh_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(23))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VHh_star_eps_s_DH(1:20)/eqlbm_ss0.hh(23))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -748,7 +860,9 @@ title('($V^{Hh*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,3)
 plot((oo_.irfs.VHl_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(24))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VHl_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(24))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VHl_star_eps_s_DH(1:20)/eqlbm_ss0.hh(24))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -761,7 +875,9 @@ title('($V^{Hl*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,4)
 plot((oo_.irfs.VLh_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(25))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VLh_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(25))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VLh_star_eps_s_DH(1:20)/eqlbm_ss0.hh(25))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -773,7 +889,9 @@ title('($V^{Lh*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,5)
 plot((oo_.irfs.VLl_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(26))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VLl_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(26))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VLl_star_eps_s_DH(1:20)/eqlbm_ss0.hh(26))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -785,7 +903,9 @@ title('($V^{Ll*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,6)
 plot((oo_.irfs.h_supplyH_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(19))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.h_supplyH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(19))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.h_supplyH_star_eps_s_DH(1:20)/eqlbm_ss0.agg(19))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -800,7 +920,9 @@ title('($H^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,7)
 plot((oo_.irfs.h_supplyL_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(18))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.h_supplyL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(18))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.h_supplyL_star_eps_s_DH(1:20)/eqlbm_ss0.agg(18))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -815,7 +937,9 @@ title('($H^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,8)
 plot((oo_.irfs.l_supplyH_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(8))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.l_supplyH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(8))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.l_supplyH_star_eps_s_DH(1:20)/eqlbm_ss0.agg(8))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -831,7 +955,9 @@ title('($L^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,9)
 plot((oo_.irfs.l_supplyL_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(7))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.l_supplyL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(7))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.l_supplyL_star_eps_s_DH(1:20)/eqlbm_ss0.agg(7))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -902,7 +1028,9 @@ title('($L^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,10)
 plot((oo_.irfs.psiH_star_eps_tauIMH(1:20)/eqlbm_ss0.psiH_star_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.psiH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.psiH_star_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.psiH_star_eps_s_DH(1:20)/eqlbm_ss0.psiH_star_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -916,7 +1044,9 @@ title('($\psi^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,11)
 plot((oo_.irfs.psiL_star_eps_tauIMH(1:20)/eqlbm_ss0.psiL_star_fixed)*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.psiL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.psiL_star_fixed)*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.psiL_star_eps_s_DH(1:20)/eqlbm_ss0.psiL_star_fixed)*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -929,7 +1059,9 @@ title('($\psi^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,12)
 plot((oo_.irfs.HhE_supply_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(31))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.HhE_supply_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(31))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.HhE_supply_star_eps_s_DH(1:20)/eqlbm_ss0.hh(31))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -942,7 +1074,9 @@ title('($H^{H*}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,13)
 plot((oo_.irfs.HlE_supply_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(32))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.HlE_supply_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(32))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.HlE_supply_star_eps_s_DH(1:20)/eqlbm_ss0.hh(32))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -954,7 +1088,9 @@ title('($H^{L*}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,14)
 plot((oo_.irfs.LhE_supply_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(33))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.LhE_supply_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(33))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.LhE_supply_star_eps_s_DH(1:20)/eqlbm_ss0.hh(33))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -966,7 +1102,9 @@ title('($L^{H*}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,15)
 plot((oo_.irfs.LlE_supply_star_eps_tauIMH(1:20)/eqlbm_ss0.hh(34))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.LlE_supply_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.hh(34))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.LlE_supply_star_eps_s_DH(1:20)/eqlbm_ss0.hh(34))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -979,7 +1117,9 @@ title('($L^{L*}_{E}$)','FontSize',6,'Interpreter','latex')
 subplot(4,4,16)
 plot(ToTL_eps_tauIMH(1:20)/ToTH_SS*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot(ToTL_eps_tau_offshoringH(1:20)/ToTH_SS*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot(ToTL_eps_s_DH(1:20)/ToTH_SS*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -987,7 +1127,11 @@ plot(ToTL_eps_s_EH(1:20)/ToTH_SS*100,'-square','LineWidth',1.5,'color', [0.8555 
 title('($ToT^{L}$)','FontSize',6,'Interpreter','latex')
 
 
+if show_tauV
 legend('$\tau_{IM}$ shock', '$\tau_{V}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 4, 'FontSize',6)
+else
+legend('$\tau_{IM}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 3, 'FontSize',6)
+end
 % saveas(figure(4), [pwd '/Northshock_South_2sec2_10Sep2025.eps'],'epsc');
 
 
@@ -998,7 +1142,9 @@ figure(5)
 subplot(3,4,1)
 plot((oo_.irfs.VAH_eps_tauIMH(1:20)/(eqlbm_ss0.agg(26) - eqlbm_ss0.agg(21) + eqlbm_ss0.masses(10)*eqlbm_ss0.ent_value(2)))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VAH_eps_tau_offshoringH(1:20)/(eqlbm_ss0.agg(26) - eqlbm_ss0.agg(21) + eqlbm_ss0.masses(10)*eqlbm_ss0.ent_value(2)))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VAH_eps_s_DH(1:20)/(eqlbm_ss0.agg(26) - eqlbm_ss0.agg(21) + eqlbm_ss0.masses(10)*eqlbm_ss0.ent_value(2)))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1009,7 +1155,9 @@ title('($VA^{H}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,2)
 plot((oo_.irfs.VAL_eps_tauIMH(1:20)/(eqlbm_ss0.agg(27) - eqlbm_ss0.agg(20) + eqlbm_ss0.masses(9)*eqlbm_ss0.ent_value(1)))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VAL_eps_tau_offshoringH(1:20)/(eqlbm_ss0.agg(27) - eqlbm_ss0.agg(20) + eqlbm_ss0.masses(9)*eqlbm_ss0.ent_value(1)))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VAL_eps_s_DH(1:20)/(eqlbm_ss0.agg(27) - eqlbm_ss0.agg(20) + eqlbm_ss0.masses(9)*eqlbm_ss0.ent_value(1)))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1021,7 +1169,9 @@ title('($VA^{L}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,3)
 plot((oo_.irfs.VAH_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(28) + eqlbm_ss0.agg(21) + eqlbm_ss0.masses(20)*eqlbm_ss0.ent_value(4))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VAH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(28) + eqlbm_ss0.agg(21) + eqlbm_ss0.masses(20)*eqlbm_ss0.ent_value(4))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VAH_star_eps_s_DH(1:20)/eqlbm_ss0.agg(28) + eqlbm_ss0.agg(21) + eqlbm_ss0.masses(20)*eqlbm_ss0.ent_value(4))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1034,7 +1184,9 @@ title('($VA^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,4)
 plot((oo_.irfs.VAL_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(29) + eqlbm_ss0.agg(20) + eqlbm_ss0.masses(19)*eqlbm_ss0.ent_value(3))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.VAL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(29) + eqlbm_ss0.agg(20) + eqlbm_ss0.masses(19)*eqlbm_ss0.ent_value(3))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.VAL_star_eps_s_DH(1:20)/eqlbm_ss0.agg(29) + eqlbm_ss0.agg(20) + eqlbm_ss0.masses(19)*eqlbm_ss0.ent_value(3))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1046,7 +1198,9 @@ title('($VA^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,5)
 plot((oo_.irfs.YH_eps_tauIMH(1:20)/eqlbm_ss0.agg(26))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.YH_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(26))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.YH_eps_s_DH(1:20)/eqlbm_ss0.agg(26))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1058,7 +1212,9 @@ title('($Y^{H}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,6)
 plot((oo_.irfs.YL_eps_tauIMH(1:20)/eqlbm_ss0.agg(27))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.YL_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(27))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.YL_eps_s_DH(1:20)/eqlbm_ss0.agg(27))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1073,7 +1229,9 @@ title('($Y^{L}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,7)
 plot((oo_.irfs.YH_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(28))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.YH_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(28))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.YH_star_eps_s_DH(1:20)/eqlbm_ss0.agg(28))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1089,7 +1247,9 @@ title('($Y^{H*}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,8)
 plot((oo_.irfs.YL_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(29))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.YL_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(29))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.YL_star_eps_s_DH(1:20)/eqlbm_ss0.agg(29))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1104,7 +1264,9 @@ title('($Y^{L*}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,9)
 plot((oo_.irfs.wtil_eps_tauIMH(1:20)/eqlbm_ss0.agg(30))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wtil_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(30))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wtil_eps_s_DH(1:20)/eqlbm_ss0.agg(30))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1117,7 +1279,9 @@ title('($\tilde{w}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,10)
 plot((oo_.irfs.wtil_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(31))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.wtil_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(31))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.wtil_star_eps_s_DH(1:20)/eqlbm_ss0.agg(31))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1130,7 +1294,9 @@ title('($\tilde{w}^{*}$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,11)
 plot((oo_.irfs.gini_eps_tauIMH(1:20)/eqlbm_ss0.agg(32))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.gini_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(32))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.gini_eps_s_DH(1:20)/eqlbm_ss0.agg(32))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1145,7 +1311,9 @@ title('($gini$)','FontSize',6,'Interpreter','latex')
 subplot(3,4,12)
 plot((oo_.irfs.gini_star_eps_tauIMH(1:20)/eqlbm_ss0.agg(33))*100, '-o','LineWidth',1.5,'color', [0.4660 0.6740 0.1880], 'MarkerSize',6,'MarkerIndices', 1:4:20);
 hold on
+if show_tauV
 plot((oo_.irfs.gini_star_eps_tau_offshoringH(1:20)/eqlbm_ss0.agg(33))*100,'-^', 'LineWidth',1.5,'color', [0 0.4470 0.7410], 'MarkerSize',6,'MarkerIndices', 1:4:20)
+end
 hold on
 plot((oo_.irfs.gini_star_eps_s_DH(1:20)/eqlbm_ss0.agg(33))*100,'-x','LineWidth',1.5,'color', [0.8634  0.7406 0.1596], 'MarkerSize',6,'MarkerIndices', 1:4:20)
 hold on
@@ -1154,5 +1322,9 @@ title('($gini^{*}$)','FontSize',6,'Interpreter','latex')
 
 
 
+if show_tauV
 legend('$\tau_{IM}$ shock', '$\tau_{V}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 4, 'FontSize',6)
+else
+legend('$\tau_{IM}$ shock', '$s_{D}$ shock','$s_{E}$ shock','Interpreter','latex','position',[0.50 0.02 0.005 0.005], 'NumColumns', 3, 'FontSize',6)
+end
 % saveas(figure(5), [pwd '/Northshock_additional_10Sep2025.eps'],'epsc');
