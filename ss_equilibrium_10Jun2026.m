@@ -20,7 +20,7 @@ if (solve_ind == 1) || (solve_ind == 0)     %calibrated steady state
     % South wages: offshoring arbitrage (eps perturbation ensures interior cutoffs)
     % Low-skill: set just below North break-even → North firms offshore low-skill to South
     % High-skill: set just above North break-even → South firms offshore high-skill to North
-    eps             = 0.01;
+    eps             = 0.1;
     wLl_star        = par_star.Z/par.Z*(1-eps)/parL.tau_offshoring*1/((1/(1-parL.s_D))^(1/(1-parL.alpha)))*wLl/Q;
     wHl_star        = par_star.Z/par.Z*(1-eps)/parH.tau_offshoring*1/((1/(1-parH.s_D))^(1/(1-parH.alpha)))*wHl/Q;
     wLh_star        = par_star.Z/par.Z*(1+eps)/((parL_star.tau_offshoring^(-1))*((1-parL_star.s_D)^(1/parL.alpha)))*wLh/Q;

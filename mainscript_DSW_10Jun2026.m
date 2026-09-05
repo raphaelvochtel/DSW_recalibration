@@ -85,12 +85,11 @@ cal_ind                     = 1; %without offshoring (2) or with offshoring (1)
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STEP 1: GRID SEARCH (-> results saved in grid_search_results.mat)
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % Base values for grid search (grid multipliers are applied to these):
 % cal                 = zeros(13,1);
-% cal(1,1)            = 2e-8;             % fV: L
-% cal(2,1)            = 5e-10;            % fV: H
-% cal(3,1)            = 2e-7;             % fV: L*
-% cal(4,1)            = 5e-8;             % fV: H*
+% cal(1,1)            = 1e-7;             % fV: L
+% cal(2,1)            = 1e-9;             % fV: H
+% cal(3,1)            = 6e-9;             % fV: L*
+% cal(4,1)            = 6e-9;             % fV: H*
 % cal(5,1)            = 2e-7;             % fX: L
 % cal(6,1)            = 1e-8;             % fX: H
 % cal(7,1)            = 1e-5;             % fX: L*
@@ -100,10 +99,9 @@ cal_ind                     = 1; %without offshoring (2) or with offshoring (1)
 % cal(11,1)           = 1.2;              % tau: L*
 % cal(12,1)           = 2.0;              % tau: H*
 % cal(13,1)           = 0.9;              % psiL_star
-% 
+%
 % [best_cal, grid_results] = grid_search_10Jun2026(par, parL, parH, parL_star, parH_star, par_star, tar, cal, cal_ind, wage);
 % cal = best_cal;
-
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STEP 2: Block-coordinate calibration from top N grid search points (-> results saved in block_calibrate_results.mat)
@@ -111,28 +109,28 @@ cal_ind                     = 1; %without offshoring (2) or with offshoring (1)
 % load('grid_search_results.mat', 'obj_values', 'all_params');
 % [~, sort_idx] = sort(obj_values);
 % N_starts = 100;
-% 
+%
 % best_resnorm = inf;
 % best_params  = [];
 % best_conj    = [1 1 1 1 1];
 % all_results  = struct('start_idx', {}, 'grid_obj', {}, 'final_resnorm', {}, ...
 %                       'params_out', {}, 'history', {});
-% 
+%
 % fprintf('=== MULTI-START BLOCK-COORDINATE CALIBRATION ===\n');
 % fprintf('Running from top %d grid search points\n\n', N_starts);
-% 
+%
 % tic_total = tic;
 % for s = 1:N_starts
 %     idx = sort_idx(s);
 %     cal = all_params(idx, :)';
-% 
+%
 %     fprintf('\n########## START %d/%d (grid obj=%.4e) ##########\n', s, N_starts, obj_values(idx));
 %     fprintf('  fV=[%.1e %.1e %.1e %.1e] fX=[%.1e %.1e %.1e %.1e]\n', cal(1:8));
 %     fprintf('  tau=[%.3f %.3f %.3f %.3f] psiL*=%.3f\n', cal(9:13));
-% 
+%
 %     [p_out, hist] = block_calibrate_10Jun2026( ...
 %         par, parL, parH, parL_star, parH_star, par_star, tar, cal, cal_ind, wage);
-% 
+%
 %     if ~isempty(hist.resnorm)
 %         final_rn = hist.resnorm(end);
 %     else
@@ -143,21 +141,21 @@ cal_ind                     = 1; %without offshoring (2) or with offshoring (1)
 %     all_results(s).final_resnorm = final_rn;
 %     all_results(s).params_out    = p_out;
 %     all_results(s).history       = hist;
-% 
+%
 %     if final_rn < best_resnorm
 %         best_resnorm = final_rn;
 %         best_params  = p_out;
 %         best_conj    = hist.best_conj;
 %         fprintf('  *** NEW OVERALL BEST: resnorm = %.6e ***\n', final_rn);
 %     end
-% 
+%
 %     save('block_calibrate_results.mat', 'best_resnorm', 'best_params', 'best_conj', 'all_results');
 % end
 % t_total = toc(tic_total);
-% 
+%
 % params_out = best_params;
 % save('block_calibrate_results.mat', 'params_out', 'best_resnorm', 'best_conj', 'all_results');
-% 
+%
 % fprintf('\n\n============================================================\n');
 % fprintf('MULTI-START SUMMARY (%d starts, %.0fs total)\n', N_starts, t_total);
 % fprintf('============================================================\n');
@@ -169,8 +167,15 @@ cal_ind                     = 1; %without offshoring (2) or with offshoring (1)
 % end
 % fprintf('\nBest resnorm: %.6e\n', best_resnorm);
 
+% =========================================================
+% Change only this to switch which calibration run to display/use below
+% =========================================================
+% results_suffix = '_eps1pc';    % eps=0.01 run
+results_suffix   = '_eps10pc';   % eps=0.1 run
+% =========================================================
+
 % Display overview
-load('block_calibrate_results.mat');
+load(['block_calibrate_results', results_suffix, '.mat']);
 
 rn = [all_results.final_resnorm];
 [rn_sorted, idx] = sort(rn);
@@ -253,7 +258,6 @@ fun                 = @(x)ss_equilibrium_10Jun2026(par, par_star, parL, parH, pa
 
 solve_ind           = 1;
 eqlbm_ss0           = ss_equilibrium_10Jun2026(par, par_star, parL, parH, parL_star, parH_star, solve, solve_ind, tar, psiL, psiL_star, wage);
-
 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%

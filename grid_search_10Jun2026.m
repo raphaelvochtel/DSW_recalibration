@@ -17,12 +17,22 @@ function [best_cal, results] = grid_search_10Jun2026(par, parL, parH, parL_star,
 % Same structure for fX.
 
 % --- Grid definitions ---
-level_fV    = [1,    2,    3,    5];
-level_fX    = [0.5,  1,    3,    7];
-HL_ratio    = [0.2,  0.5,  1,    2,    5];
-NS_ratio    = [0.2,  0.5,  1,    2,    5];
-mult_tau    = [1.0,  1.05, 1.1,  1.25];
-vals_psiLstar = [0.9, 1.2,  1.5,  2.0];
+% Rescaled for eps=0.1 (see mainscript comment above cal_base): the top-30
+% points from the eps1pc-base grid run showed level_fV and mult_tau pinned
+% at their ceilings, level_fX pinned at its floor, and fracVL*/fracVH*
+% saturated at 1.0 across every one of the top 30 points regardless of
+% NS_ratio -- so level_fV and NS_ratio ceilings are extended well past
+% where that saturation was still occurring, level_fX's floor is lowered,
+% and vals_psiLstar's floor is dropped to bracket the eps=0.01 calibrated
+% value (0.581), which the old floor of 0.9 excluded entirely. HL_ratio and
+% mult_tau, which were not boundary-bound, are trimmed to fewer points to
+% keep total points near ~3000 (4x4x4x4x3x4 = 3072).
+level_fV    = [1,    3,    8,    20];
+level_fX    = [0.1,  0.3,  1,    3];
+HL_ratio    = [0.2,  0.5,  1,    3];
+NS_ratio    = [0.3,  1,    3,    8];
+mult_tau    = [1.0,  1.15, 1.3];
+vals_psiLstar = [0.5, 0.9,  1.3,  1.8];
 
 [G_fV, G_fX, G_HL, G_NS, G_tau, G_psi] = ndgrid( ...
     level_fV, level_fX, HL_ratio, NS_ratio, mult_tau, vals_psiLstar);
